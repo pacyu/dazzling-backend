@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" th:replace="~{blog/layout :: layout(~{:: title}, ~{:: link}, ~{:: style}, ~{}, ~{:: section}, ~{:: div.slider})}" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>404 - 页面未找到 | Dazzling</title>
+    <link th:href="@{~/blog/layout-1/css/styles.css}" rel="stylesheet">
+    <link th:href="@{~/blog/layout-1/css/responsive.css}" rel="stylesheet">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 80px 20px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border-color);
+        }
+        .error-code {
+            font-size: 140px;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+        .error-message {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        .error-desc {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+        .error-actions a {
+            margin: 0 12px;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .error-actions .btn-primary {
+            background-color: var(--btn-hover);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+        }
+        .error-actions .btn-primary:hover {
+            background-color: var(--btn-bg);
+            border-color: var(--border-color);
+            transform: translateY(-2px);
+        }
+        .error-actions .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .error-actions .btn-outline:hover {
+            background: var(--btn-bg);
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+<div class="slider"></div>
+<section>
+    <div class="container">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <div class="error-message">哎呀！页面走丢了</div>
+            <div class="error-desc">您访问的页面不存在，可能已被删除或链接有误。</div>
+            <div class="error-actions">
+                <a th:href="@{/index}" class="btn btn-primary"><i class="ion-home"></i> 返回首页</a>
+                <a th:href="@{/search}" class="btn btn-outline-secondary"><i class="ion-search"></i> 搜索内容</a>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

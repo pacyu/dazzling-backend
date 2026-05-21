@@ -1,0 +1,11 @@
+[(${#dates.format(subscriptionDate, 'yyyy-MM-dd HH:mm:ss')})]
+
+嗨！[(${recipientName})]
+
+您收到来自 [(${senderName}=='' ? '未知用户': ${senderName})]（[(${senderEmail})]） 的来信：
+
+[(${content})]
+
+该邮件由 dazzling 代为发送。
+
+至此，感谢您的光临！
